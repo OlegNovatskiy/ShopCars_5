@@ -10,44 +10,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shopcar.components.entity.Car;
 import com.shopcar.components.entity.Customer;
+import com.shopcar.components.entity.Seller;
 import com.shopcar.components.entity.request.CustomerRequest;
+import com.shopcar.components.entity.request.SellerRequest;
 import com.shopcar.service.CustomerService;
+import com.shopcar.service.SellerService;
 
 @Configuration
 @RestController
-@RequestMapping("/customer")
-public class CustomerController {
+@RequestMapping(value = "seller")
+public class SellerController {
 
 	@Autowired
-	private CustomerService customerService;
+	private SellerService sellerService;
 	
 
 	@RequestMapping(value = "/show/{id}", method = RequestMethod.GET)
-	public Customer showOneCustomer(@PathVariable("id") Long id) {
-		return customerService.findCustommerById(id);
+	public Seller showOneCustomer(@PathVariable("id") Long id) {
+		return sellerService.findSellerById(id);
 	}
 	
 	@RequestMapping(value = "/show", method  = RequestMethod.GET)
-	public Collection<Customer> showAllCustomer(){
-		return customerService.findAllCustomerses();
+	public Collection<Seller> showAllSellers(){
+		return sellerService.findAllCustomerses();
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public void createCustomer(@RequestBody CustomerRequest customerRequest){
-		customerService.createCustomer(customerRequest);
+	public void createCustomer(@RequestBody SellerRequest sellerRequest){
+		sellerService.createSeller(sellerRequest);
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
 	public String deleteOneCustomer(@PathVariable("id") Long id) {
-		customerService.deleteCustomer(id);
+		sellerService.deleteSeller(id);
 		return "Delete customer with id " + String.valueOf(id);
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public String updateCar(@RequestBody Customer customer) {
-		customerService.updateCustomer(customer);		
-		return "Car was update: " + String.valueOf(customer.getId());
+	public String updateCar(@RequestBody Seller seller) {
+		sellerService.updateSeller(seller);		
+		return "Car was update: " + String.valueOf(seller.getId());
 	}
+	
 }
