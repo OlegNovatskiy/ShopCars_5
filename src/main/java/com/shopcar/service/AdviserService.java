@@ -10,7 +10,7 @@ import com.shopcar.components.entity.request.AdviserRequest;
 import com.shopcar.components.interfaces.IAdviser;
 
 @Service
-public class AdviseService {
+public class AdviserService {
 	
 	@Autowired
 	private IAdviser iAdviser;
