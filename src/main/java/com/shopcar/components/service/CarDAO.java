@@ -45,7 +45,7 @@ public class CarDAO implements ICar {
 	 * @return
 	 */
 	public Car findCarById(Long id) {
-		final String SQL = "SELECT * FROM Cars WHERE Cars.id = ?";
+		final String SQL = "SELECT * FROM ShopCars.Cars WHERE ShopCars.Cars.id = ?";
 		Car car = jdbc.queryForObject(SQL, new workingWithRowMap(), id);
 		return car;
 	}
