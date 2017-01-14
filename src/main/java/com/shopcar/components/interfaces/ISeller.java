@@ -6,7 +6,7 @@ import com.shopcar.components.entity.Seller;
 import com.shopcar.components.entity.request.SellerRequest;
 
 public interface ISeller {
-	public Seller findSellerkById(Long id);
+	public Seller findSellerById(Long id);
 
 	public Collection<Seller> findAllSellers();
 
