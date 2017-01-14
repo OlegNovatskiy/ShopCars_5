@@ -4,7 +4,7 @@ package com.shopcar.components.entity.request;
  * It'a class use for create consultant by Users in UI.
  */
 
-public class ConsultantRequest {
+public class AdviserRequest {
 
 	private String fnameСonsultant;
 	private String snameСonsultant;
