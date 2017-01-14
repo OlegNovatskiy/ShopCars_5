@@ -1,10 +1,10 @@
 package com.shopcar.components.entity;
 
 /*
- * It'a class use for work with Сonsultant in service.
+ * It'a class use for work with Adviser in service.
  */
 
-public class Сonsultant {
+public class Adviser {
 
 	private Long id;
 	private String fnameСonsultant;
@@ -12,18 +12,18 @@ public class Сonsultant {
 	private Boolean marriedСonsultant;
 	private Boolean genderСonsultant;
 
-	public Сonsultant() {
+	public Adviser() {
 	}
 
 	/**
-	 * It's constructor for create an object of class Сonsultant.
+	 * It's constructor for create an object of class Adviser.
 	 * 
 	 * @param fnameСonsultant
 	 * @param snameСonsultant
 	 * @param marriedСonsultant
 	 * @param genderСonsultant
 	 */
-	public Сonsultant(String fnameСonsultant, String snameСonsultant, Boolean marriedСonsultant,
+	public Adviser(String fnameСonsultant, String snameСonsultant, Boolean marriedСonsultant,
 			Boolean genderСonsultant) {
 		this.fnameСonsultant = fnameСonsultant;
 		this.snameСonsultant = snameСonsultant;

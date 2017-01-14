@@ -1,42 +1,15 @@
-package com.shopcar.components.entity;
+package com.shopcar.components.entity.request;
 
 /*
- * It'a class use for work with Customer in service.
+ * It'a class use for create customer by Users in UI.
  */
 
-public class Customer {
+public class CustomerRequest {
 
-	private Long id;
 	private String fnameCustomer;
 	private String snameCustomer;
 	private Boolean marriedCustomer;
 	private Boolean genderCustomer;
-
-	public Customer() {
-	}
-
-	/**
-	 * It's constructor for create an object of class Customer.
-	 * 
-	 * @param fnameSeller
-	 * @param snameSeller
-	 * @param marriedSeller
-	 * @param genderSeller
-	 */
-	public Customer(String fnameCustomer, String snameCustomer, Boolean marriedCustomer, Boolean genderCustomer) {
-		this.fnameCustomer = fnameCustomer;
-		this.snameCustomer = snameCustomer;
-		this.marriedCustomer = marriedCustomer;
-		this.genderCustomer = genderCustomer;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getFnameCustomer() {
 		return fnameCustomer;
@@ -69,5 +42,5 @@ public class Customer {
 	public void setGenderCustomer(Boolean genderCustomer) {
 		this.genderCustomer = genderCustomer;
 	}
-
+	
 }
