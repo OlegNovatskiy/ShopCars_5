@@ -10,11 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shopcar.components.entity.Customer;
 import com.shopcar.components.entity.Seller;
-import com.shopcar.components.entity.request.CustomerRequest;
 import com.shopcar.components.entity.request.SellerRequest;
-import com.shopcar.service.CustomerService;
 import com.shopcar.service.SellerService;
 
 @Configuration
