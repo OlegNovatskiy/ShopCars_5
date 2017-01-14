@@ -18,10 +18,10 @@ public class Customer {
 	/**
 	 * It's constructor for create an object of class Customer.
 	 * 
-	 * @param fnameSeller
-	 * @param snameSeller
-	 * @param marriedSeller
-	 * @param genderSeller
+	 * @param fnameCustomer
+	 * @param snameCustomer
+	 * @param marriedCustomer
+	 * @param genderCustomer
 	 */
 	public Customer(String fnameCustomer, String snameCustomer, Boolean marriedCustomer, Boolean genderCustomer) {
 		this.fnameCustomer = fnameCustomer;
