@@ -20,7 +20,7 @@ public class CustomerDAO implements ICustomer {
 
 	@Autowired
 	private JdbcTemplate jdbc;
-	
+
 	public static class workingWithRowMap implements RowMapper<Customer> {
 
 		/**
@@ -37,9 +37,10 @@ public class CustomerDAO implements ICustomer {
 		}
 
 	}
-	
+
 	public Customer findCustomerById(Long id) {
-		Customer cutomer = jdbc.queryForObject("Select * From ShopCars.Customers WHERE ShopCars.Customers.id = ?", new workingWithRowMap(), id);
+		Customer cutomer = jdbc.queryForObject("Select * From ShopCars.Customers WHERE ShopCars.Customers.id = ?",
+				new workingWithRowMap(), id);
 		return cutomer;
 	}
 
@@ -49,22 +50,22 @@ public class CustomerDAO implements ICustomer {
 	}
 
 	public void updateCustomer(Customer customer) {
-		jdbc.update("UPDATE ShopCars.Customers SET"
-		+ " fname = " + customer.getFnameCustomer() 
-		+ " sname = " + customer.getSnameCustomer()
-		+ " married_customer = " + String.valueOf(customer.getMarriedCustomer())
-		+ " gender_customer" + String.valueOf(customer.getGenderCustomer())
-		+ " WHERE id =" + String.valueOf(customer.getId()));
+		jdbc.update("UPDATE ShopCars.Customers SET" + " fname_customer = " + customer.getFnameCustomer()
+				+ " sname_customer = " + customer.getSnameCustomer() + " married_customer = "
+				+ String.valueOf(customer.getMarriedCustomer()) + " gender_customer"
+				+ String.valueOf(customer.getGenderCustomer()) + " WHERE id =" + String.valueOf(customer.getId()));
 	}
 
 	public void createCustomer(CustomerRequest customerRequest) {
-		jdbc.update("INSERT INTO ShopCars.Customers (fname_customer, sname_customer, married_customer, gender_customer) "
-				+ "values ('"+customerRequest.getFnameCustomer()+"','"+customerRequest.getSnameCustomer()
-				+ "','" + String.valueOf(customerRequest.getMarriedCustomer())+"','"+String.valueOf(customerRequest.getGenderCustomer())+"');");
+		jdbc.update(
+				"INSERT INTO ShopCars.Customers (fname_customer, sname_customer, married_customer, gender_customer) "
+						+ "values ('" + customerRequest.getFnameCustomer() + "','" + customerRequest.getSnameCustomer()
+						+ "','" + String.valueOf(customerRequest.getMarriedCustomer()) + "','"
+						+ String.valueOf(customerRequest.getGenderCustomer()) + "');");
 	}
 
 	public void deleteCustomer(Long id) {
-		jdbc.update("DELETE FROM ShopCars.Customers WHERE ShopCars.Customers.id = "+String.valueOf(id));
+		jdbc.update("DELETE FROM ShopCars.Customers WHERE ShopCars.Customers.id = " + String.valueOf(id));
 	}
 
 }
