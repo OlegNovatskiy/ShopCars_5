@@ -24,7 +24,7 @@ public class CustomerDAO implements ICustomer {
 	public static class workingWithRowMap implements RowMapper<Customer> {
 
 		/**
-		 * Copy data about car from DB.
+		 * Copy data about customer from DB.
 		 */
 		public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Customer customer = new Customer();
