@@ -37,18 +37,18 @@ public class AdviserController {
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public void createCustomer(@RequestBody AdviserRequest adviserRequest){
+	public void createAdviser(@RequestBody AdviserRequest adviserRequest){
 		adviserService.createAdviser(adviserRequest);
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-	public String deleteOneCustomer(@PathVariable("id") Long id) {
+	public String deleteOneAdviser(@PathVariable("id") Long id) {
 		adviserService.deleteAdviser(id);
 		return "Delete adviser with id " + String.valueOf(id);
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public String updateCar(@RequestBody Adviser adviser) {
+	public String updateAdviser(@RequestBody Adviser adviser) {
 		adviserService.updateAdviser(adviser);		
 		return "adviser was update: " + String.valueOf(adviser.getId());
 	}
