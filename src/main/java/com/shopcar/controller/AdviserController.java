@@ -11,11 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shopcar.components.entity.Adviser;
-import com.shopcar.components.entity.Seller;
 import com.shopcar.components.entity.request.AdviserRequest;
-import com.shopcar.components.entity.request.SellerRequest;
 import com.shopcar.service.AdviserService;
-import com.shopcar.service.SellerService;
 
 @Configuration
 @RestController

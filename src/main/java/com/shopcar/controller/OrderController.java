@@ -10,44 +10,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.shopcar.components.entity.Address;
-import com.shopcar.components.entity.request.AddressRequest;
-import com.shopcar.service.AddressService;
+import com.shopcar.components.entity.Order;
+import com.shopcar.components.entity.request.OrderRequest;
+import com.shopcar.service.OrderService;
 
 @Configuration
 @RestController
-@RequestMapping("/address")
-public class AddressController {
+@RequestMapping("/order")
+public class OrderController {
 
 	@Autowired
-	private AddressService addressService;
+	private OrderService orderService;
 	
 
 	@RequestMapping(value = "/show/{id}", method = RequestMethod.GET)
-	public Address showOneAddress(@PathVariable("id") Long id) {
-		return addressService.findAddressById(id);
+	public Order showOneOrder(@PathVariable("id") Long id) {
+		return orderService.findOrderById(id);
 	}
 	
 	@RequestMapping(value = "/show", method  = RequestMethod.GET)
-	public Collection<Address> showAllAdvisers(){
-		return addressService.findAllAddresses();
+	public Collection<Order> showAllOrder(){
+		return orderService.findAllOrders();
 	}
 	
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
-	public void createAddress(@RequestBody AddressRequest  addressRequest){
-		addressService.createAddress(addressRequest);
+	public void createOrder(@RequestBody OrderRequest orderRequest){
+		orderService.createOrder(orderRequest);
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-	public String deleteOneAddress(@PathVariable("id") Long id) {
-		addressService.deleteAddress(id);
-		return "Delete Address with id " + String.valueOf(id);
+	public String deleteOneOrder(@PathVariable("id") Long id) {
+		orderService.deleteOrder(id);
+		return "Delete Order with id " + String.valueOf(id);
 	}
 	
 	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public String updateAddress(@RequestBody Address address) {
-		addressService.updateAddress(address);		
-		return "address was update: " + String.valueOf(address.getId());
+	public String updateCar(@RequestBody Order order) {
+		orderService.updateOrder(order);		
+		return "Order was update: " + String.valueOf(order.getId());
 	}
 	
 }
