@@ -41,7 +41,7 @@ public class OrderDAO implements IOrder{
 
 	}	
 	
-	public Order findCkeckById(Long id) {
+	public Order findOrderById(Long id) {
 		Order order = jdbc.queryForObject("Select * From ShopCars.Orders WHERE ShopCars.Orders.id = ?", new workingWithRowMap(), id);
 		return order;
 	}
