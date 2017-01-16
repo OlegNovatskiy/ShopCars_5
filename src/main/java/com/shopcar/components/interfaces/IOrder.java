@@ -7,7 +7,7 @@ import com.shopcar.components.entity.request.OrderRequest;
 
 public interface IOrder {
 
-	public Order findCkeckById(Long id);
+	public Order findOrderById(Long id);
 
 	public Collection<Order> findAllOrders();
 
